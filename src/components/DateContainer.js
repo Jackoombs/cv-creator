@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { format } from 'date-fns'; 
 
 
-function DateContainer({onInputChange}) {
+function DateContainer({onInputChange, fieldFrom, fieldUntil}) {
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -15,9 +16,8 @@ function DateContainer({onInputChange}) {
         id="job-from"
         selected={startDate}
         onChange={(date) => {
-          setStartDate(date)
-          onInputChange("job-from", date)
-        }}
+          onInputChange(fieldFrom, format(date, 'MM/yyyy'))
+          setStartDate(date)}}
         selectsStart
         startDate={startDate}
         endDate={endDate}
@@ -29,7 +29,9 @@ function DateContainer({onInputChange}) {
         className="date-input"
         id="job-until"
         selected={endDate}
-        onChange={(date) => setEndDate(date)}
+        onChange={(date) => {
+          onInputChange(fieldUntil, format(date, 'MM/yyyy'))
+          setEndDate(date)}}
         selectsEnd
         startDate={startDate}
         endDate={endDate}

@@ -8,7 +8,7 @@ function Form({inputChangeHandler}) {
     <form action="">
       <PersonalInfo inputChangeHandler={inputChangeHandler}/>
       <Experience inputChangeHandler={inputChangeHandler}/>
-      <Education />
+      <Education inputChangeHandler={inputChangeHandler}/>
     </form>
   )
 }

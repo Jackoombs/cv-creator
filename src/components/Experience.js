@@ -10,7 +10,7 @@ function Experience({inputChangeHandler}) {
       <TextInput id="position" label="Position" onInputChange={inputChangeHandler}/>
       <TextInput id="company" label="Company" onInputChange={inputChangeHandler}/>
       <TextAreaInput id="job-description" label="Description" onInputChange={inputChangeHandler}/>
-      <DateContainer onInputChange={inputChangeHandler}/>
+      <DateContainer onInputChange={inputChangeHandler} fieldFrom={"job-from"} fieldUntil={"job-until"}/>
     </div>
   )
 }

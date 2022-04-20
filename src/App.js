@@ -11,6 +11,10 @@ function App() {
     setData({...data, [field]:value})
   }
 
+  // useEffect(() => {
+  //   console.log(data)
+  // },[data])
+
   return (
     <div className="App">
       <div className='title'>
